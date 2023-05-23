@@ -1,9 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Loja de Bilhetes</title>
+  <meta charset="UTF-8">
+  <title>Venda de Bilhetes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+    }
+    
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    select,
+    input[type="number"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-<h1><b>Loja de Bilhetes<b></h1>
-<p>Bem-vindos!</p>
-<hr>
+  <header>
+    <h1>Bem-vindo à Loja de Bilhetes!</h1>
+  </header>
+
+  <main>
+    <form action="/comprar" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="evento">Evento:</label>
+      <select id="evento" name="evento" required>
+        <option value="">Selecione um evento</option>
+        <option value="show">Show</option>
+        <option value="esporte">Evento Esportivo</option>
+        <option value="teatro">Peça de Teatro</option>
+      </select>
+
+      <label for="quantidade">Quantidade:</label>
+      <input type="number" id="quantidade" name="quantidade" min="1" max="10" required>
+
+      <input type="submit" value="Comprar Bilhetes">
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Venda de Bilhetes. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
