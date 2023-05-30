@@ -95,13 +95,21 @@
       <label for="evento">Evento:</label>
       <select id="evento" name="evento" required>
         <option value="">Selecione um evento</option>
-        <option value="Festivais">Festivais</option>
-        <option value="desporto">Evento Desportivo</option>
-        <option value="Viagem">Viagem</option>
+        <option value="festivais.html">Festivais</option>
+        <option value="evento desportivo.html">Evento Desportivo</option>
+        <option value="viagens.html">Viagem</option>
       </select>
-      <button onclick="document.location='festivais.html'">Comprar Bilhetes</button>
+      <button onclick="redirecionar()">Comprar Bilhetes</button>
     </form>
   </main>
+  <script>
+    function redirecionar() {
+      var eventoselecionado = document.getElementById("evento").value;
+      if (eventoselecionado !== "") {
+        window.location.href = eventoselecionado;
+      }
+    }
+  </script>
 </body>
 <footer>
   <p>Apoio ao Cliente: 91x xxx xxx </p>
