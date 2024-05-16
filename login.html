@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Venda de Bilhetes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container input[type="submit"],
+        .login-container .visitor-button,
+        .login-container .register-button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: calc(100% - 22px);
+        }
+        .login-container input[type="submit"] {
+            background-color: #28a745;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .login-container .visitor-button {
+            background-color: #007bff;
+        }
+        .login-container .visitor-button:hover {
+            background-color: #0056b3;
+        }
+        .login-container .register-button {
+            background-color: #ffc107;
+            color: #343a40;
+        }
+        .login-container .register-button:hover {
+            background-color: #e0a800;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>Venda de Bilhetes</h1>
+</header>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <input type="submit" value="Entrar">
+    </form>
+    <button class="visitor-button" onclick="window.location.href='/visitante'">Entrar como Visitante</button>
+    <button class="register-button" onclick="window.location.href='/registro'">Registrar-se</button>
+</div>
+
+<footer>
+    <p>Contactos Aleatórios:</p>
+    <p>Email: contato1@example.com | Telefone: (11) 1234-5678</p>
+    <p>Email: contato2@example.com | Telefone: (21) 8765-4321</p>
+    <p><a href="/informacoes">Informações</a></p>
+</footer>
+
+</body>
+</html>
