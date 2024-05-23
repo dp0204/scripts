@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo - Venda de Bilhetes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-bottom: 60px; /* Altura do rodapé */
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            margin: auto; /* Centraliza o container */
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .login-container input[type="email"],.login-container input[type="text"],.login-container input[type="number"],.login-container input[type="date"],
+        .login-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: auto;
+        }
+        .login-container input[type="submit"],
+        .login-container .visitor-button,
+        .login-container .register-button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: calc(100% - 22px);
+        }
+        .login-container input[type="submit"] {
+            background-color: #28a745;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .login-container .visitor-button {
+            background-color: #007bff;
+        }
+        .login-container .visitor-button:hover {
+            background-color: #0056b3;
+        }
+        .login-container .register-button {
+            background-color: #ffc107;
+            color: #343a40;
+        }
+        .login-container .register-button:hover {
+            background-color: #e0a800;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 0.7em; /* Tamanho menor para os contatos */
+            z-index: 999; /* Para garantir que o rodapé esteja sobreposto */
+        }
+        footer p {
+            margin: 5px 0; /* Margem menor entre os contatos */
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Espaço extra para garantir que o rodapé esteja sempre visível */
+        .spacer {
+            height: 60px; /* Altura igual à do rodapé */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Venda de Bilhetes</h1>
+</header>
+
+<div class="login-container">
+    <h2>Registo</h2>
+    <form action="/login" method="POST">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="apelido" placeholder="Apelido" required>
+        <input type="date" name="data" placeholder="Data de nascimento" required>
+        <input type="number" name="cell" placeholder="Numero de telemovel" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <input type="submit" value="Entrar">
+    </form>
+</div>
+
+<div class="spacer"></div> <!-- Espaço para garantir que o rodapé esteja sempre visível -->
+
+<footer>
+    <p>Contacto: Email: contato@example.com | Telefone: (11) 1234-5678</p>
+    <p><a href="/informacoes">Informações</a></p>
+</footer>
+
+</body>
+</html>
