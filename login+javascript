@@ -146,6 +146,25 @@
         // Redireciona para a página de registro
         window.location.href = '/registro';
     }
+     function loadSettings() {
+            const tema = localStorage.getItem('tema') || 'light';
+            document.getElementById('tema').value = tema;
+            applySettings();
+        }
+
+    function applySettings() {
+            const tema = document.getElementById('tema').value;
+            if(tema=='dark'){
+                document.body.style.backgroundColor='#394047';
+            }
+            else{
+                document.body.style.backgroundColor ='#f0f0f0';
+            }
+            localStorage.setItem('tema',tema);
+        }
+    document.getElementById('tema').addEventListener('change', applySettings);
+
+    loadSettings();
 </script>
 
 </body>
