@@ -24,7 +24,7 @@ const sequelize = require('../config/database');
 const Usuario = sequelize.define('Usuario', {
     nome: { type: DataTypes.STRING, allowNull: false },
     email: { type: DataTypes.STRING, allowNull: false, unique: true },
-    senha: { type: DataTypes.STRING, allowNull: false }, // Será armazenada como hash
+    senha: { type: DataTypes.STRING, allowNull: false }, 
     telefone: { type: DataTypes.STRING, allowNull: true },
     endereco: { type: DataTypes.TEXT, allowNull: true }
 });
@@ -50,14 +50,14 @@ sequelize.sync()
         console.error('Erro ao sincronizar banco de dados:', err);
     });
 
-// Rota para registro de novo usuário
+
 app.post('/registro', async (req, res) => {
     const { nome, email, senha, telefone, endereco } = req.body;
     try {
-        // Hash da senha
+       
         const hashedPassword = await bcrypt.hash(senha, 10);
         
-        // Criar novo usuário
+        
         const usuario = await Usuario.create({ nome, email, senha: hashedPassword, telefone, endereco });
         res.status(201).json({ message: 'Usuário registrado com sucesso!', usuario });
     } catch (err) {
@@ -66,18 +66,18 @@ app.post('/registro', async (req, res) => {
     }
 });
 
-// Rota para login de usuário
+
 app.post('/login', async (req, res) => {
     const { email, senha } = req.body;
     try {
-        // Encontrar usuário pelo email
+      
         const usuario = await Usuario.findOne({ where: { email } });
         
         if (!usuario) {
             return res.status(400).json({ message: 'Usuário não encontrado.' });
         }
 
-        // Comparar a senha informada com o hash armazenado
+        
         const isMatch = await bcrypt.compare(senha, usuario.senha);
         
         if (!isMatch) {
@@ -91,7 +91,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// Porta para o servidor
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
